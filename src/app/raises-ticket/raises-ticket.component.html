@@ -1,0 +1,49 @@
+<app-support-dashboard></app-support-dashboard>
+<div class = "main-content">
+    <div class = "col-md-8 offset-md-3">
+        <h3>Raise Ticket</h3>
+        <form name = "form2" [formGroup] = "addTicketForm" (ngSubmit) = "onSubmit()" novalidate>
+            <div class = "form-group">
+                <label><span>*</span> Requester Id</label>
+                <input type = "number" class = "form-control" id = "requester" name ="requester" formControlName = "requester" [(ngModel)] = "ticket.requester"> 
+                <small class="text-danger" 
+                *ngIf="addTicketForm.get('requester').hasError('required') && addTicketForm.get('requester').touched">
+                    Requester Id is required
+                </small>
+            </div>
+            <div class = "form-group">
+                <label><span>*</span> Title</label>
+                <input type = "text" class = "form-control" id = "title" name = "title" formControlName = "title" [(ngModel)] = "ticket.title"> 
+                <small class="text-danger" 
+                *ngIf="addTicketForm.get('title').hasError('required') && addTicketForm.get('title').touched">
+                    Title is required
+                </small>
+            </div>
+            <div class = "form-group">
+                <label><span>*</span> Description</label>
+                <input type = "text" class = "form-control" id = "description" name = "description" formControlName = "description" [(ngModel)] = "ticket.description"> 
+                <small class="text-danger" 
+                *ngIf="addTicketForm.get('description').hasError('required') && addTicketForm.get('description').touched">
+                    Description is required
+                </small>
+            </div>
+            <div class = "form-group">
+                <label><span>*</span> Status</label>
+                <input type = "text" class = "form-control" id = "status" name = "status" formControlName = "status" [(ngModel)] = "ticket.status"> 
+                <small class="text-danger" 
+                *ngIf="addTicketForm.get('status').hasError('required') && addTicketForm.get('status').touched">
+                    Status is required
+                </small>
+            </div>
+            <div class = "form-group">
+                <label><span>*</span> Priority</label>
+                <input type = "text" class = "form-control" id = "priority" name = "priority" formControlName = "priority" [(ngModel)] = "ticket.priority">
+                <small class="text-danger" 
+                *ngIf="addTicketForm.get('priority').hasError('required') && addTicketForm.get('priority').touched">
+                    Priority is required
+                </small>
+            </div>
+            <button type = "submit" class = "btn btn-primary" [disabled] = "!addTicketForm.valid">Submit</button>
+        </form>
+    </div>
+</div>

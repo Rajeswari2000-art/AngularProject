@@ -1,0 +1,34 @@
+<div class = "main-content">
+    <button (click) = "logout()" class = "btn btn-warning">Logout</button>
+</div>
+<nav class="vertical-navbar">
+    <h4>IT Support Dashboard</h4>
+    <ul>
+        <li>
+          <a>
+            <fa-icon [icon]="faUser"></fa-icon>
+            <button (click) = "viewUser(user.userId)" id = "view" class="nav-text" style = "margin-left: 33px">View Profile</button>
+          </a>
+        </li>
+        <li class="dropdown">
+            <a href="#" (click)="toggleDropdown($event)">
+              <fa-icon [icon]="ticket"></fa-icon>
+              <span class="nav-text" style="margin-left: 29px">Ticket<fa-icon [icon]="down" style = "font-size: 15px; margin-left: 110px"></fa-icon></span>
+            </a>
+            <ul class="dropdown-menu" [ngClass]="{'show': isDropdownOpen}">
+              <li><a href="tickets-lists">Ticket List</a></li>
+              <li><a href="raises-ticket">Raise Ticket</a></li>
+              <li><a href="share-ticket">Share Ticket</a></li>
+              <li><a href="share-ticket-list">Shared Tickets List</a></li>
+              <li><a href="approval-request">Approval Request</a></li>
+              <li><a href="ticket-updates">Ticket Update</a></li>
+            </ul>
+        </li>
+        <li>
+          <a href="notifications">
+              <fa-icon [icon]="email"></fa-icon>
+              <span class="nav-text" style = "margin-left: 32px">Email Notifications</span>
+          </a>
+      </li>   
+    </ul>
+</nav>

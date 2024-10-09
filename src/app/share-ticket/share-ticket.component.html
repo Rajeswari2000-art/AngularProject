@@ -1,0 +1,25 @@
+<app-support-dashboard></app-support-dashboard>
+<div class = "main-content">
+    <div class = "col-md-8 offset-md-3">
+        <h3>Share Ticket</h3>
+        <form name = "form2" [formGroup] = "shareTicketForm" (ngSubmit) = "onSubmit()" novalidate>
+            <div class = "form-group">
+                <label><span>*</span> Ticket Id</label>
+                <input type = "number" class = "form-control" id = "ticketId" name ="ticketId" formControlName = "ticketId" [(ngModel)] = "ticketShare.ticketId"> 
+                <small class="text-danger" 
+                *ngIf="shareTicketForm.get('ticketId').hasError('required') && shareTicketForm.get('ticketId').touched">
+                    Ticket Id is required
+                </small>
+            </div>
+            <div class = "form-group">
+                <label><span>*</span> SharedWith Id</label>
+                <input type = "number" class = "form-control" id = "sharedWithId" name = "sharedWithId" formControlName = "sharedWithId" [(ngModel)] = "ticketShare.sharedWithId"> 
+                <small class="text-danger" 
+                *ngIf="shareTicketForm.get('sharedWithId').hasError('required') && shareTicketForm.get('sharedWithId').touched">
+                    SharedWith Id is required
+                </small>
+            </div>
+            <button type = "submit" class = "btn btn-primary" [disabled] = "!shareTicketForm.valid">Submit</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<app-member-dashboard></app-member-dashboard>
+<div class = "main-content">
+    <h3>Tickets List</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Ticket Id</th>
+          <th>Requester Name</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Priority</th>
+          <th>Created Date</th>
+          <th>Updated Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ticket of tickets">
+          <td>{{ ticket.ticketId }}</td>
+          <td>{{ ticket.requester.name }}</td>
+          <td>{{ ticket.title }}</td>
+          <td>{{ ticket.description }}</td>
+          <td>{{ ticket.status }}</td>
+          <td>{{ ticket.priority }}</td>
+          <td>{{ ticket.createdDate }}</td>
+          <td>{{ ticket.updatedDate }}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>

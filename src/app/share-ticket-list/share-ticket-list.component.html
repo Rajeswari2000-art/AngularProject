@@ -1,0 +1,28 @@
+<app-support-dashboard></app-support-dashboard>
+<div class = "main-content">
+    <h3>Shared Tickets List</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Ticket Id</th>
+          <th>Title</th>
+          <th>Requester Id</th>
+          <th>Requester Name</th>
+          <th>Shared with User Id</th>
+          <th>Shared with User Name</th>
+          <th>Shared Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let share of shares">
+          <td>{{ share.ticketId }}</td>
+          <td>{{ share.ticket.title }}</td>
+          <td>{{ share.ticket.requester.userId }}</td>
+          <td>{{ share.ticket.requester.name }}</td>
+          <td>{{ share.sharedWith.userId }}</td>
+          <td>{{ share.sharedWith.name }}</td>
+          <td>{{ share.sharedDate }}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>

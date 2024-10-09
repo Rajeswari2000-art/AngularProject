@@ -1,0 +1,35 @@
+<app-support-dashboard></app-support-dashboard>
+<div class = "main-content">
+    <h3>Tickets List</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Requester Id</th>
+          <th>Requester Name</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Priority</th>
+          <th>Created Date</th>
+          <th>Updated Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ticket of tickets">
+          <td>{{ ticket.requester.userId }}</td>
+          <td>{{ ticket.requester.name }}</td>
+          <td>{{ ticket.title }}</td>
+          <td>{{ ticket.description }}</td>
+          <td>{{ ticket.status }}</td>
+          <td>{{ ticket.priority }}</td>
+          <td>{{ ticket.createdDate }}</td>
+          <td>{{ ticket.updatedDate }}</td>
+          <td>
+            <button (click) = "updateTicket(ticket.ticketId)" class = "btn btn-info">Update</button>
+            <button (click) = "viewTicket(ticket.ticketId)" class = "btn btn-secondary" style = "margin-top: 5px;">View</button>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

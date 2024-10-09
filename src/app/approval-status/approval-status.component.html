@@ -1,0 +1,12 @@
+<app-manager-dashboard></app-manager-dashboard>
+<div class = "main-content">
+    <h2>Decide Approval</h2>
+    <label for="approvalId">Approval ID : </label>
+    <input type="number" id="approvalId" [(ngModel)]="approvalId"><br>
+  
+    <label for="approve">Approve : </label>     
+    <input type="checkbox" id="approve" [(ngModel)]="approve"><br>
+  
+    <button (click)="decideApproval()" class = "btn btn-primary">Submit Decision</button>
+    <p>{{ responseMessage }}</p>
+</div>

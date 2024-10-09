@@ -1,0 +1,22 @@
+<app-member-dashboard></app-member-dashboard>
+<div class = "main-content">
+    <div class="container">
+        <h3>Reopen Ticket</h3>
+        <form [formGroup]="reopenTicketForm" (ngSubmit)="reopenTicket()" novalidate>
+          <div class="form-group">
+            <label><span>*</span> Ticket ID:</label>
+            <input id="ticketId" formControlName="ticketId" class="form-control" type="number" [(ngModel)] = "ticket.ticketId">
+            <div *ngIf="reopenTicketForm.get('ticketId').hasError('required') && reopenTicketForm.get('ticketId').touched" class="text-danger">
+              Ticket ID is required.
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled] = "!reopenTicketForm.valid">Reopen Ticket</button>
+        </form>
+        <div *ngIf="successMessage" class="alert alert-success mt-2">
+          {{ successMessage }}
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger mt-2">
+          {{ errorMessage }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+h2{
+    font-size: 25px;
+    padding-bottom: 25px;
+}
+
+label{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+input{
+    margin-left: 10px;
+}
+
+p{
+    padding-top: 20px;
+}

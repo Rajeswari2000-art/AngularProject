@@ -1,0 +1,15 @@
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+h3{
+    margin: 20px 0px;
+}
+button{
+    margin-top: 15px;
+}
+span{
+    font-size: 15px;
+    color: red;
+    font-weight: bold;
+}

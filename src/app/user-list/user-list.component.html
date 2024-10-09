@@ -1,0 +1,35 @@
+<app-admin-dashboard></app-admin-dashboard>
+<div class = "main-content">
+    <h3>Users List</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>User Id</th>
+          <th>Login Id</th>
+          <th>Password</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Created Date</th>
+          <th>Updated Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.userId }}</td>
+          <td>{{ user.loginId }}</td>
+          <td>{{ user.passwordHash }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td>{{ user.createdDate }}</td>
+          <td>{{ user.updatedDate }}</td>
+          <td>
+            <button (click) = "updateUser(user.userId)" class = "btn btn-info">Update</button>
+            <button (click) = "deleteUser(user.userId)" class = "btn btn-danger" style = "margin-top: 5px;">Delete</button>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

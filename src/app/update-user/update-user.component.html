@@ -1,0 +1,49 @@
+<app-admin-dashboard></app-admin-dashboard>
+<div class = "main-content">
+    <div class = "col-md-8 offset-md-3">
+        <h3>Update User</h3>
+        <form name = "form1" [formGroup] = "updateUserForm" (ngSubmit) = "onSubmit()" novalidate>
+            <div class = "form-group">
+                <label><span>*</span> Loin ID</label>
+                <input type = "text" class = "form-control" id = "loginId" name = "loginId" formControlName = "loginId" [(ngModel)] = "user.loginId"> 
+                <small class="text-danger" 
+                   *ngIf="updateUserForm.get('loginId').hasError('required') && updateUserForm.get('loginId').touched">
+                      Login ID is required
+                </small>
+            </div>
+            <div class = "form-group">
+                <label><span>*</span> Password</label>
+                <input type = "password" class = "form-control" id = "passwordHash" name = "passwordHash" formControlName = "passwordHash" [(ngModel)] = "user.passwordHash"> 
+                <small class="text-danger" 
+                   *ngIf="updateUserForm.get('passwordHash').hasError('required') && updateUserForm.get('passwordHash').touched">
+                      Password is required
+                </small>
+            </div>
+            <div class = "form-group">
+                <label><span>*</span> Name</label>
+                <input type = "text" class = "form-control" id = "name" name = "name" formControlName = "name" [(ngModel)] = "user.name"> 
+                <small class="text-danger" 
+                   *ngIf="updateUserForm.get('name').hasError('required') && updateUserForm.get('name').touched">
+                      Name is required
+                </small>
+            </div>
+            <div class = "form-group">
+                <label><span>*</span> Email</label>
+                <input type = "text" class = "form-control" id = "email" name = "email" formControlName = "email" [(ngModel)] = "user.email">
+                <small class="text-danger" 
+                   *ngIf="updateUserForm.get('email').hasError('required') && updateUserForm.get('email').touched">
+                      Email is required
+                </small>
+            </div>
+            <div class = "form-group">
+                <label><span>*</span> Role</label>
+                <input type = "text" class = "form-control" id = "role" name = "role" formControlName = "role" [(ngModel)] = "user.role">
+                <small class="text-danger" 
+                   *ngIf="updateUserForm.get('role').hasError('required') && updateUserForm.get('role').touched">
+                       Role is required
+                </small>
+            </div>
+            <button type = "submit" class = "btn btn-primary" [disabled] = "!updateUserForm.valid">Submit</button>
+        </form>
+    </div>
+</div>

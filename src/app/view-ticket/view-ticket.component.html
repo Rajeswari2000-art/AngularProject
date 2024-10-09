@@ -1,0 +1,36 @@
+<app-support-dashboard></app-support-dashboard>
+<div class = "main-content">
+    <h3>Ticket Details</h3>
+    <div class = "info">
+        <div>
+            <label>Ticket Id: <b>{{ ticket.ticketId }}</b></label>
+        </div>
+        <div>
+           <label>Requester Id: <b>{{ ticket.requester.userId }}</b></label>
+        </div>
+        <div>
+           <label>Requester Name: <b>{{ ticket.requester.name }}</b></label>
+        </div>
+        <div>
+           <label>Title: <b>{{ ticket.title }}</b></label>
+        </div>
+        <div>
+           <label>Description: <b>{{ ticket.description }}</b></label>
+        </div>
+        <div>
+           <label>Status: <b>{{ ticket.status }}</b></label>
+        </div>
+        <div>
+            <label>Priority: <b>{{ ticket.priority }}</b></label>
+         </div>
+        <div>
+           <label>Created Date: <b>{{ ticket.createdDate }}</b></label>
+        </div>
+        <div>
+           <label>Updated Date: <b>{{ ticket.updatedDate }}</b></label>
+        </div>
+        <div>
+            <label>Closed Date: <b>{{ ticket.closedDate }}</b></label>
+        </div>
+    </div>
+</div>

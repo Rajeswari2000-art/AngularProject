@@ -1,0 +1,30 @@
+<app-manager-dashboard></app-manager-dashboard>.
+<div class = "main-content">
+    <h3>Tickets Approval Status List</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Approval Id</th>
+          <th>Ticket Id</th>
+          <th>Requester Name</th>
+          <th>Approver Id</th>
+          <th>Name</th>
+          <th>Approval Status</th>
+          <th>Requested Date</th>
+          <th>Decision Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.approvalId }}</td>
+          <td>{{ user.ticket.ticketId }}</td>
+          <td>{{ user.ticket.requester.name }}</td>
+          <td>{{ user.approver.userId }}</td>
+          <td>{{ user.approver.name }}</td>
+          <td>{{ user.approvalStatus }}</td>
+          <td>{{ user.requestedDate }}</td>
+          <td>{{ user.decisionDate }}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>

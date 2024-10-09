@@ -1,0 +1,31 @@
+<div class = "main-content">
+    <button (click) = "logout()" class = "btn btn-warning">Logout</button>
+</div>
+<nav class="vertical-navbar">
+    <h6>Reporting Manager Dashboard</h6>
+    <ul>
+        <li>
+            <a>
+              <fa-icon [icon]="faUser"></fa-icon>
+              <button (click) = "viewUser(user.userId)" id = "view" class="nav-text" style = "margin-left: 33px">View Profile</button>
+            </a>
+        </li>
+        <li class="dropdown">
+            <a href="#" (click)="toggleDropdown($event)">
+              <fa-icon [icon]="ticket"></fa-icon>
+              <span class="nav-text" style="margin-left: 29px">Ticket<fa-icon [icon]="down" style = "font-size: 15px; margin-left: 110px"></fa-icon></span>
+            </a>
+            <ul class="dropdown-menu" [ngClass]="{'show': isDropdownOpen}">
+              <li><a href="tickets-listss">Ticket List</a></li>
+              <li><a href="approval-status">Approval Decision</a></li>
+              <li><a href="approve-tickets">Approval Tickets</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="notification">
+                <fa-icon [icon]="email"></fa-icon>
+                <span class="nav-text" style = "margin-left: 32px">Email Notifications</span>
+            </a>
+        </li>   
+    </ul>
+</nav>
